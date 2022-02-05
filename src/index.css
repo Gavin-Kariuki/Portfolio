@@ -19,43 +19,17 @@ code {
   color: aliceblue;
 }
 
-span{
-   height: 25px;
-   width: 25px;
-   margin-right: 10px;
-   border-radius: 50%;
-   background-color: white;
-   animation: loading 1s linear infinite;
- }
- /* Creating the loading animation*/
- @keyframes loading {
-   0%{
-    transform: translateX(0);
-   }
-   25%{
-    transform: translateX(15px);
-   }
-   50%{
-    transform: translateX(-15px);
-   }
-   100%{
-    transform: translateX(0);
-   }
-     
- }
-  
-span:nth-child(1){
-  animation-delay: 0.1s;
+.loading {
+  font-weight: bold;
+  display:inline-block;
+  font-family: monospace;
+  font-size: 30px;
+  clip-path: inset(0 3ch 0 0);
+  animation: l 1s steps(4) infinite;
 }
-span:nth-child(2){
-  animation-delay: 0.2s;
-}
-span:nth-child(3){
-  animation-delay: 0.3s;
-}
-span:nth-child(4){
-  animation-delay: 0.4s;
-}
-span:nth-child(5){
-  animation-delay: 0.5s;
+
+@keyframes l {
+  to {
+    clip-path: inset(0 -1ch 0 0)
+  }
 }
